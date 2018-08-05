@@ -1,8 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- Website originally coded and developed by Snapshot -->
-<!-- Copyright Baystation12 2017 -->
-<!-- this website is licensed under the MIT license. The full source code and license for this website can be found at: https://github.com/Baystation12/Landing -->
+<!-- Website coded and developed by Snapshot -->
+<!-- Copyright Baystation12 and Snapshot 2014 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
 
 <head>
@@ -11,35 +10,10 @@
     <link rel="shortcut icon" href="favicon.ico">
     <title>Baystation 12 - Index </title>
     <script src="css/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/components/site.css">
-
-    <link rel="stylesheet" type="text/css" href="css/components/container.css">
-    <link rel="stylesheet" type="text/css" href="css/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="css/components/header.css">
-    <link rel="stylesheet" type="text/css" href="css/components/image.css">
-    <link rel="stylesheet" type="text/css" href="css/components/menu.css">
-
-    <link rel="stylesheet" type="text/css" href="css/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="css/components/list.css">
-    <link rel="stylesheet" type="text/css" href="css/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="css/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="css/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="css/components/message.css">
-    <link rel="stylesheet" type="text/css" href="css/components/button.css">
-    <link rel="stylesheet" type="text/css" href="css/components/dimmer.css">
-    <link rel="stylesheet" type="text/css" href="css/components/statistic.css">
-    <link rel="stylesheet" type="text/css" href="css/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="css/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="css/components/form.css">
-    <link rel="stylesheet" type="text/css" href="css/components/input.css">
-    <link rel="stylesheet" type="text/css" href="css/components/button.css">
-    <link rel="stylesheet" type="text/css" href="css/components/list.css">
-    <link rel="stylesheet" type="text/css" href="css/components/message.css">
-    <link rel="stylesheet" type="text/css" href="css/components/icon.css">
-    <script src="css/components/form.js"></script>
-    <script src="css/components/transition.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+    <script src="moment.js"></script>
     <script src="index.js"></script>
+    <script src="news.js"></script>
 </head>
 
 <body>
@@ -52,13 +26,48 @@
             <div id="syndicate1"></div>
             <div id="syndicate2"></div>
             <div class="ui one column grid centered">
+
                 <div class="twelve wide column">
-                    <img src="https://baystation12.net/forums/logo.png">
-                    <div class="ui stackable four labeled icon item menu">
-                        <a class="item" href="/forums">
+                    <img class="logo" src="https://baystation12.net/forums/logo.png">
+                    <div class="ui top attached segment">
+                        <div class="ui three statistics">
+                            <div class="statistic blue">
+                                <div class="label">
+                                    Players
+                                </div>
+                                <div class="value" id="player">
+                                    --
+                                </div>
+                            </div>
+                            <div class="statistic teal">
+                                <div class="label">
+                                    Mode
+                                </div>
+                                <div class="value" id="mode">
+                                    --
+                                </div>
+                            </div>
+                            <div class="statistic violet">
+                                <div class="label">
+                                    Round Duration
+                                </div>
+                                <div class="value" id="admin">
+                                    --:--
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui attached fluid pointing six labeled icon item menu">
+                        <a class="active item" href="index.html">
+                            <i class="newspaper icon"></i> News
+                        </a>
+                        <a class="item" href="about.html">
+                            <i class="info icon"></i> About
+                        </a>
+                        <a class="item" href="https://forums.baystation12.net">
                             <i class="comments icon"></i> Forums
                         </a>
-                        <a class="item" href="http://wiki.baystation12.net">
+                        <a class="item" href="https://wiki.baystation12.net">
                             <i class="browser icon"></i> Wiki
                         </a>
                         <a class="item" href="https://github.com/Baystation12/Baystation12/">
@@ -68,45 +77,11 @@
                             <i class="gamepad icon"></i> Play
                         </a>
                     </div>
-                    <div class="ui raised segment red">
-                    <div class="ui three statistics">
-                        <div class="statistic blue">
-                            <div class="label">
-                                Players
-                            </div>
-                            <div class="value" id="player">
-                                22
-                            </div>
-                        </div>
-                        <div class="statistic teal">
-                            <div class="label">
-                                Mode
-                            </div>
-                            <div class="value" id="mode">
-                                Secret
-                            </div>
-                        </div>
-                        <div class="statistic violet">
-                            <div class="label">
-                                Round Duration
-                            </div>
-                            <div class="value" id="admin">
-                                00:00
-                            </div>
-                        </div>
-                    </div>
-                        <p></p>
-                        We are a heavy roleplaying server for the game 'Space Station 13' on the <a href="http://www.byond.com/">BYOND </a> platform where you play as an employee of the trans-stellar corporation known as Nanotrasen, working on one of their research stations posted on the fringes of colonized space.
-                        <br/>
-                        <br/> The frontier is a dangerous place, however, and Nanotrasen has made many enemies on their rise to power. Spies, saboteurs, hostile aliens, dangerous computer programs, and people with seemingly supernatural abilities. Lax hiring standards mean accidents are commonplace, and it's a very thin barrier that holds the uncaring, airless space at bay.
-                        <br />
-                        <br/> So who will you be? An engineer, tasked to keep the station powered and intact enough to be hospitable; a scientist who advances human knowledge about alien artifacts or advanced technologies; the station's artificial intelligence, overseeing everything to serve and protect, or one of the dastardly antagonists? Come on over and find out.
-                        <br />
-                    </div>
+                    <div class="" id="content"></div>
                 </div>
             </div>
-            <div class="ui one column grid centered">
-                <div class="copyright">Copyright Baystation12 2015. Space tiles by Goonstation / <a class="anocolor" href="https://creativecommons.org/licenses/by-sa/2.0/"> CC BY SA 2.0 </a> </div>
+            <div class="ui one column grid centered" >
+                <div class="copyright">Copyright Baystation12 2017. Space tiles by Goonstation / <a class="anocolor" href="https://creativecommons.org/licenses/by-sa/2.0/"> CC BY SA 2.0 </a> </div>
             </div>
         </div>
     </div>
