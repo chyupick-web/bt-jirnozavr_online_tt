@@ -23,7 +23,7 @@ $(function () { //shorthand document.ready function
     $("#content").addClass("loading");
 
 
-    $.post( "https://forums.baystation12.net/getNews.php",{} )
+    $.get( "https://forums.baystation12.net/getNews.php",{} )
         .done(function(data) {
             var content = $("#content");
             content.removeClass("loading");
