@@ -1,8 +1,6 @@
-$(function () { //shorthand document.ready function
-    if (window.Notification) {
-        window.Notification.requestPermission();
-    }
+var notificationsEnabled = false;
 
+$(function () { //shorthand document.ready function
     var justNotified = false;
 
     updateData();
@@ -39,6 +37,7 @@ $(function () { //shorthand document.ready function
 
             function shouldNotify() {
                 return (
+                    notificationsEnabled &&
                     !justNotified && (
                         !data.players || !data.mode || !data.roundduration || // Server is down
                         (data.roundduration && decodeURIComponent(data.roundduration) == '00:00') // In lobby or just started
@@ -50,3 +49,17 @@ $(function () { //shorthand document.ready function
         });
     }
 });
+
+function toggleNotifications() {
+    notificationsEnabled = !notificationsEnabled;
+
+    if(notificationsEnabled) {
+        if (window.Notification) {
+            if (window.Notification.permission != 'granted') {
+                window.Notification.requestPermission();
+            }
+        } else {
+            $('#notificationsToggler').html('Notifications not supported in this browser.');
+        }
+    }
+}
